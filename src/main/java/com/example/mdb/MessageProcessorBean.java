@@ -29,9 +29,10 @@ public class MessageProcessorBean implements MessageListener {
             } else {
                 text = message.getBody(String.class);
             }
-            PreparedStatement ps = connection.prepareStatement("INSERT INTO messages(content) VALUES (?)");
-            ps.setString(1, text);
-            ps.executeUpdate();
+            try (PreparedStatement ps = connection.prepareStatement("INSERT INTO messages(content) VALUES (?)")) {
+                ps.setString(1, text);
+                ps.executeUpdate();
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
