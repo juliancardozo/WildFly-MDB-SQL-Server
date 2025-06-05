@@ -1,3 +1,6 @@
+# Replace 'path/to/sqljdbc.jar' with the location of the JDBC driver JAR.
+# The driver can be downloaded from:
+# https://learn.microsoft.com/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server
 module add --name=com.microsoft.sqlserver --resources=path/to/sqljdbc.jar --dependencies=javax.api,javax.transaction.api
 
 /subsystem=datasources/jdbc-driver=sqlserver:add(driver-name=sqlserver,driver-module-name=com.microsoft.sqlserver,driver-class-name=com.microsoft.sqlserver.jdbc.SQLServerDriver)
