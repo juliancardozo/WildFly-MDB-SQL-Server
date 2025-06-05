@@ -1,0 +1,5 @@
+module add --name=com.microsoft.sqlserver --resources=path/to/sqljdbc.jar --dependencies=javax.api,javax.transaction.api
+
+/subsystem=datasources/jdbc-driver=sqlserver:add(driver-name=sqlserver,driver-module-name=com.microsoft.sqlserver,driver-class-name=com.microsoft.sqlserver.jdbc.SQLServerDriver)
+
+/subsystem=datasources/data-source=SQLServerDS:add(jndi-name=java:jboss/datasources/SQLServerDS, driver-name=sqlserver, connection-url=jdbc:sqlserver://localhost:1433;databaseName=mydb, user-name=sa, password=sa_passwd)
