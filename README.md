@@ -12,7 +12,7 @@ El resultado es un archivo `wildfly-mdb-sqlserver-1.0-SNAPSHOT.jar` que puede de
 
 ## Configuración en WildFly
 
-1. **Datasource a SQL Server**. Puede agregarse mediante el script `config/sqlserver-datasource.cli`:
+1. **Datasource a SQL Server**. Puede agregarse mediante el script `config/sqlserver-datasource.cli`.  Este archivo contiene la instrucción `module add` con una ruta al driver JDBC de SQL Server (`path/to/sqljdbc.jar`). Descargue el driver desde [Microsoft](https://learn.microsoft.com/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server) y edite la ruta en el script antes de ejecutarlo:
 
 ```bash
 # Dentro del directorio bin de WildFly
